@@ -5,9 +5,6 @@ from app.model.company import Company, Company_branch
 
 
 class Employee(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # username = models.TextField()
-    # password = models.TextField()
     ONLY_YOURS = 'only_yours'
     SUBDIVISION = 'subdivision'
     BRANCHES = 'branches'
@@ -40,10 +37,10 @@ class Employee(models.Model):
     user = models.ForeignKey(User, on_delete=models.RESTRICT)
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
     company_branch = models.ForeignKey(Company_branch, on_delete=models.CASCADE)
-    login = models.TextField()
-    password = models.TextField()
-    act_start_date = models.DateField()
-    act_finish_date = models.DateField()
+    login = models.TextField(null=True, blank=True)
+    password = models.TextField(null=True, blank=True)
+    act_start_date = models.DateField(null=True, blank=True)
+    act_finish_date = models.DateField(null=True, blank=True)
     reference = models.TextField(null=True, blank=True)
     active = models.BooleanField(default=False)
     insurer = models.BooleanField(default=False)
