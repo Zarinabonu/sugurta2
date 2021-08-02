@@ -1,5 +1,5 @@
 """
-WSGI config for insurance project.
+WSGI config for portfolio project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

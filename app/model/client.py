@@ -1,6 +1,7 @@
 from django.db import models
 
 from app.model.handbook import City, Region, District, Okonx
+from app.model.portfolio import Portfolio
 
 
 class Client(models.Model):
@@ -10,6 +11,7 @@ class Client(models.Model):
         (INDIVIDUAL, 'ФИЗ'),
         (LOYAL, 'ЮРД'),
     )
+    portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
     type = models.CharField(choices=TYPES, null=True, blank=True, max_length=128)
     city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True)
     resident = models.BooleanField(default=False)

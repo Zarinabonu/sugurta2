@@ -1,13 +1,10 @@
 from django.db import models
 
-from app.model.client import Client
-
 
 class DMS(models.Model):
     oked = models.IntegerField(null=True, blank=True)
     activity_type = models.TextField(null=True, blank=True)
     summa_by_contract = models.FloatField(null=True, blank=True)
-    insured = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True)
     tariff = models.FloatField(null=True, blank=True)
     jurnal_register_number = models.TextField(null=True, blank=True)
     register_date = models.DateField(null=True, blank=True)
@@ -51,7 +48,6 @@ class NS(models.Model):
     oked = models.IntegerField(null=True, blank=True)
     activity_type = models.TextField(null=True, blank=True)
     summa_by_contract = models.FloatField(null=True, blank=True)
-    insured = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True)
     tariff = models.FloatField(null=True, blank=True)
     jurnal_register_number = models.TextField(null=True, blank=True)
     register_date = models.DateField(null=True, blank=True)

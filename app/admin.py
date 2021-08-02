@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import District, DMS, Individual, NS, Travel, Contract,\
-    City,Class_type,General_information,Payment_type,Payment,Object,Portfolio,\
+    City,Class_type,General_information,Payment_type,Payment,Object,Portfolio, Polis_insurance,\
     Rent,Client, Region, Company_branch, Currency, Company, Loyal, Polis, Bonus, Okonx, Employee
 
 
@@ -28,6 +28,7 @@ admin.site.register(Polis)
 admin.site.register(Bonus)
 admin.site.register(Okonx)
 admin.site.register(Employee)
+admin.site.register(Polis_insurance)
 
 
 # Register your models here.
