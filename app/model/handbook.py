@@ -25,3 +25,5 @@ class Okonx(models.Model):
 
 class Polis(models.Model):
     name = models.TextField(null=True, blank=True)
+
+

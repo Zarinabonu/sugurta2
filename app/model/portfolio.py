@@ -15,9 +15,9 @@ class Payment_type(models.Model):
 
 
 class Portfolio(models.Model):
-    contract_number = models.TextField(null=True, blank=True)
     employee = models.ForeignKey(Employee, on_delete=models.SET_NULL, null=True)
     created = models.DateField(auto_now_add=True)
+    contract_num = models.TextField(null=True, blank=True, unique=True)
 
 
 class General_information(models.Model):
@@ -27,7 +27,7 @@ class General_information(models.Model):
         (OWN, 'Собсвенные средства '),
         (BUDGET, 'Бюжетные средства'),
     )
-    portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
+    portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE, null=True)
     class_type = models.ForeignKey(Class_type, on_delete=models.SET_NULL, null=True)
     date_conclusion = models.DateField(null=True, blank=True)
     start_period = models.DateField(null=True, blank=True)
@@ -48,7 +48,7 @@ class General_information(models.Model):
 
 
 class Object(models.Model):
-    portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
+    portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE, null=True)
     class_type = models.ForeignKey(Class_type, on_delete=models.SET_NULL, null=True)
     dms = models.ForeignKey(DMS, on_delete=models.SET_NULL, null=True)
     ns = models.ForeignKey(NS,on_delete=models.SET_NULL, null=True)
