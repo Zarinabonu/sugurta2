@@ -1,5 +1,5 @@
 from rest_framework import status
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView
 from rest_framework.response import Response
 
 from app.api.portfolio.serializers import General_infoSerializer, ObjectSerializer
@@ -28,3 +28,6 @@ class ObjectCreateAPIView(CreateAPIView):
             serializer.save()
             id = serializer.data.get('id')
             return Response(id, status=status.HTTP_201_CREATED)
+
+
+
