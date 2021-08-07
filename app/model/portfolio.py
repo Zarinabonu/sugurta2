@@ -7,6 +7,7 @@ from app.model.employee import Employee
 
 class Class_type(models.Model):
     name = models.TextField(default='', null=True, blank=True)
+    text = models.TextField(null=True, blank=True)
     code = models.FloatField(null=True,blank=True)
 
 
