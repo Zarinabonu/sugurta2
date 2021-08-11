@@ -37,8 +37,6 @@ class General_information(models.Model):
     currency_condition = models.TextField(null=True, blank=True)
     currency = models.ForeignKey(Currency, on_delete=models.SET_NULL, null=True)
     geographic_area = models.ForeignKey(City, on_delete=models.SET_NULL, null=True)
-    # insured_person = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True, related_name="insured_person")
-    # vigod_acquirer = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True, related_name="vigod_acquirer")
     payment_source = models.CharField(choices=PAYMENT, null=True, blank=True, max_length=128)
     export_agreement = models.BooleanField(default=False)
     investment_project = models.BooleanField(default=False)
